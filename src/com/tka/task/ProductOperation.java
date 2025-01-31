@@ -1,6 +1,7 @@
 package com.tka.task;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ProductOperation {
@@ -9,6 +10,13 @@ public class ProductOperation {
 
 	public String addProduct(Product product) {
 
+		for (Product dpProduct : list) {
+			if(dpProduct.getProductName().equalsIgnoreCase(product.getProductName())) {
+				return "Product alredy exist...";
+			}
+			
+		} 
+		
 		list.add(product);
 		return "Product Added Successfully !";
 
